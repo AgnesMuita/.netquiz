@@ -34,7 +34,7 @@ namespace QuizWebAppWith.NET.Controllers
         public async Task<IActionResult> ShowSearchResults(string SearchPhrase)
             //show searchphrase is the name on the form inside views for search
         {
-            return View("Index", await _context.Question.ToListAsync());
+            return View("Index", await _context.Question.Where(i=>i.QuizQuestion.Contains(SearchPhrase)).ToListAsync());
         }
         //public string ShowSearchResults(string SearchPhrase)
         //{
