@@ -60,6 +60,7 @@ namespace QuizWebAppWith.NET.Controllers
         }
 
         // GET: Questions/Create
+        [Microsoft.AspNetCore.Authorization.Authorize]
         public IActionResult Create()
         {
             return View();
