@@ -25,6 +25,21 @@ namespace QuizWebAppWith.NET.Controllers
         {
             return View(await _context.Question.ToListAsync());
         }
+        // GET://show searchbar
+        public async Task<IActionResult> ShowSearchBar()
+        {
+            return View();
+        }
+        //POST://show search results
+        public async Task<IActionResult> ShowSearchResults(string SearchPhrase)
+            //show searchphrase is the name on the form inside views for search
+        {
+            return View("Index", await _context.Question.ToListAsync());
+        }
+        //public string ShowSearchResults(string SearchPhrase)
+        //{
+            //return "You entered " + SearchPhrase;
+       // }
 
         // GET: Questions/Details/5
         public async Task<IActionResult> Details(int? id)
